@@ -1,0 +1,27 @@
+@use '../config/variables'as v;
+@use '../base/typography'as t;
+@use "../config/mixins";
+
+.product-list-preview{
+    display: grid;
+grid-template-columns: 1fr;
+grid-template-rows: repeat(6, 1fr);
+grid-column-gap: 0px;
+grid-row-gap: 1rem;
+padding: 0;
+
+&-item{
+    display: grid;
+    grid-template-columns: repeat(2, 2fr) 1fr;
+    grid-template-rows: 1fr;
+    justify-items: center;
+    align-items: center;
+    .product-image{
+        
+    }
+    .product-info{
+        text-align: center;
+
+    }
+}
+}

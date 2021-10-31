@@ -1,0 +1,40 @@
+@using ProvidenceBooks.Shared
+@using ProvidenceBooks.Client.Services.CartService
+@inject HttpClient Http
+@inject ICartService CS
+@inject IProductService PS
+
+
+  <div class="cart-section">
+    @if (CS.Cart.Any())
+    {
+        <h2>Your Cart</h2>
+        <ul class="cart-list">
+            @foreach (Product item in CS.Cart)
+            {
+                <li class="cart-content">
+                    <div class="product-image">
+                        <img src="/images/@item.Image" alt="@item.ProductName">
+                    </div>
+
+                  
+                    <div class="cart-info">
+                        @item.ProductName - $@item.Price
+                    </div>
+
+                      <button class="btn btn-sm" 
+                            @onclick="@(()
+                             => CS.DeleteProduct(item))">
+                        <span class="oi oi-delete">
+                            Delete
+                        </span>
+                    </button>
+                    
+                </li>
+            }
+        </ul>
+        <div class="p-2">
+            <h3>Total: $@CS.Total</h3>
+        </div>
+    }
+    </div>

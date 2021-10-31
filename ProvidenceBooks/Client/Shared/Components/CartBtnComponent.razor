@@ -1,0 +1,16 @@
+@inject ICartService CS
+
+ <button class="btn btn-primary" @onclick="@(() =>
+                      CS.AddProduct(product))">
+                    Add to Cart
+                </button>
+
+
+
+                @code {
+                     private Product product = null;
+
+   
+
+   
+                }

@@ -1,0 +1,86 @@
+@using ProvidenceBooks.Shared
+@using ProvidenceBooks.Client.Services.CartService
+@inject HttpClient Http
+@inject ICartService CS
+@inject IProductService PS
+
+
+
+
+
+
+@if (PS.Products == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <section class="product-list">
+      <div class="container">
+    <h2>Book List</h2>
+   
+    <ol class="product-list-preview">
+        @foreach (Product item in CategoryId == null ? PS.Products : PS.Products.Where(p => p.CategoryId == CategoryId))
+        {
+            
+        
+        <li class="product-list-preview-item">
+            <div class="product-image">
+                <a href="/product/@item.ProductId">
+                <img src="@item.Image" />
+                </a>
+            </div>
+            <div class="product-info">
+               <h2 class="product-title">
+                    @item.ProductName
+               </h2> 
+               <p class="product-description">
+                    @item.Description
+               </p>
+                
+            </div>
+           
+            <div>
+                 <div class="product-price">
+                     
+                 @if (item.OriginalPrice > item.Price)
+                    {
+                         <h3 class="price">
+                            $@item.Price
+                        </h3>
+                        <h4 class="original-price">
+                             $@item.OriginalPrice
+                        </h4>
+                       
+                    }
+                    else{
+                          <h3 class="price">
+                        $@item.Price
+                    </h3>
+                    }
+                </div>
+                  <button class="btn btn-primary" 
+                    @onclick="@(() =>
+                    
+                      CS.AddProduct(item))">
+                        Add to Cart
+                    </button>
+            </div>
+        </li>
+        }
+    </ol>
+</div> 
+    </section>
+
+  
+}
+
+@code {
+    [Parameter]
+    public int? CategoryId { get; set; } = null;
+
+      protected override void  OnInitialized()
+  {
+      PS.LoadProducts();
+  }
+}

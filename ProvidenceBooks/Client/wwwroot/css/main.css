@@ -1,0 +1,340 @@
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* Remove default margin */
+body,
+h1,
+h2,
+h3,
+h4,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+/* Remove list styles on ul, ol elements with a list role, which suggests default styling will be removed */
+ul[role=list],
+ol[role=list] {
+  list-style: none;
+}
+
+/* Set core root defaults */
+html:focus-within {
+  scroll-behavior: smooth;
+}
+
+/* Set core body defaults */
+body {
+  min-height: 100vh;
+  text-rendering: optimizeSpeed;
+  line-height: 1.5;
+  overflow-x: hidden;
+}
+
+body.stop-scrolling {
+  overflow-y: hidden;
+}
+
+/* A elements that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%;
+  display: block;
+  height: auto;
+}
+
+/* Inherit fonts for inputs and buttons */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* Remove all animations, transitions and smooth scroll for people that prefer not to see them */
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+
+  *,
+*::before,
+*::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
+/***Mobile First*****/
+/***Mobile First end*****/
+/******Desktop First*****/
+.container {
+  width: min(80ch, 100% - 2rem);
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.product-title {
+  color: #242629;
+}
+
+.product-description {
+  width: min(50ch, 100% - 2rem);
+  margin-left: auto;
+  margin-right: auto;
+  font-size: 0.812rem;
+  text-align: center;
+}
+
+.btn {
+  background-color: #c26100;
+  padding: 0.5rem;
+  border: solid black 1px;
+  border-radius: 0.5rem;
+  box-shadow: 1px 2px 1px black;
+  color: #ebf6ff;
+}
+
+.product-price .price {
+  color: green;
+}
+.product-price .original-price {
+  color: grey;
+  text-decoration: line-through;
+}
+
+.cart-section {
+  display: grid;
+  height: 30vh;
+}
+.cart-section .cart-list {
+  padding: 0;
+}
+.cart-section .cart-content {
+  padding: 0;
+  display: grid;
+  grid-template-columns: 1fr 2fr 1fr;
+  justify-items: center;
+  align-items: center;
+  height: min-content;
+}
+.cart-section .cart-content img {
+  width: 25%;
+  margin: auto;
+}
+#header {
+  display: grid;
+  background-color: #ebf6ff;
+  grid-template-columns: repeat(2, 1fr);
+  justify-items: center;
+  align-items: center;
+  max-width: 1600px;
+  width: 100%;
+  position: relative;
+  z-index: 1;
+}
+#header .logo img {
+  width: 6rem;
+}
+#header .cart img {
+  width: 2rem;
+}
+
+/******NAV MENU*******/
+.close {
+  position: absolute;
+  display: grid;
+  grid-template-columns: 1fr;
+  height: 100%;
+  transition: all 0.5s ease;
+  align-content: space-around;
+  transform: translateX(-100%);
+}
+.close .nav-link {
+  font-size: 2.212rem;
+}
+
+.open {
+  position: absolute;
+  display: grid;
+  grid-template-columns: 1fr;
+  align-content: space-around;
+  height: 100%;
+  width: 100%;
+  transform: translateX(0%);
+  background-color: green;
+  transition: all 0.5s ease;
+}
+.open .nav-link {
+  font-size: 2.212rem;
+}
+
+.navBar {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+.navBar .nav-menu {
+  position: relative;
+  list-style: none;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  align-items: center;
+  justify-items: center;
+  background-color: #ebf6ff;
+  height: 8rem;
+  padding: 0;
+  margin: 0;
+}
+.navBar .nav-menu li img {
+  width: 3rem;
+  margin: 0 auto;
+  transition: all 0.5s ease;
+}
+.navBar .nav-menu li a {
+  color: #242629;
+  font-size: 1.135rem;
+}
+.navBar .nav-menu .browse {
+  position: relative;
+  text-align: center;
+  color: #242629;
+  display: block;
+  font-size: 1.135rem;
+  z-index: 1;
+  position: relative;
+  transition: all 0.5s ease;
+}
+.navBar .nav-menu .browse img {
+  margin: auto;
+}
+.navBar .nav-menu .browse:hover {
+  color: green;
+  transform: translateY(-20%);
+}
+.navBar .nav-menu .browse .menu-btn {
+  cursor: pointer;
+}
+
+/******END NAV MENU*******/
+#main {
+  height: calc(100vh - 60px);
+}
+
+/******FOOTER*******/
+#footer {
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
+#footer .bottom-ux-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: 16vh;
+  background-color: #ebf6ff;
+  align-items: center;
+}
+#footer .bottom-ux-container .box {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(2, 1fr);
+  align-items: center;
+  width: 100%;
+  justify-items: center;
+}
+#footer .bottom-ux-container .box img {
+  width: 4rem;
+}
+#footer .bottom-ux-container .box h4 {
+  font-size: 2.212rem;
+  text-transform: capitalize;
+}
+/****** END FOOTER*******/
+h2 {
+  color: #fccc9c;
+}
+
+.hero {
+  background: url("../images/backgrounds/bg1.jpg") center/cover;
+  height: 20vh;
+}
+
+.categories {
+  height: 100vh;
+}
+.categories .category-grid-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(4, 1fr);
+  grid-gap: 1rem;
+  height: 50vh;
+  margin-top: 2rem;
+}
+.categories .category-grid-container .category-item {
+  background-color: #ebf6ff;
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2.212rem;
+  box-shadow: 2px 3px 5px #242629;
+}
+
+.product-list-preview {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(6, 1fr);
+  grid-column-gap: 0px;
+  grid-row-gap: 1rem;
+  padding: 0;
+}
+.product-list-preview-item {
+  display: grid;
+  grid-template-columns: repeat(2, 2fr) 1fr;
+  grid-template-rows: 1fr;
+  justify-items: center;
+  align-items: center;
+}
+.product-list-preview-item .product-info {
+  text-align: center;
+}
+
+/*****Media Queroes*******/
+/****End Home Page Media*****/
+p {
+  font-family: "Poppins", sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Montserrat", sans-serif;
+}
+
+a {
+  text-decoration: none;
+  font-family: "Raleway", sans-serif;
+}
+
+ul {
+  list-style: none;
+  margin: none;
+  padding: none;
+}
+
+/*# sourceMappingURL=main.css.map */

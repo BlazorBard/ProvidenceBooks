@@ -1,0 +1,55 @@
+﻿@page "/"
+@page "/{categoryurl}"
+@inject ICategoryService CatService
+
+<section class="hero">
+ 
+</section>
+
+
+<section class="categories">
+  <div class="container">
+    <div class="category-grid-container">
+      @if (category != null)
+      {
+       <h1> Enjoy books on @category.Name</h1>   
+       <ProductList CategoryId = "@category.Id"/>
+      }
+      else
+      {
+        @foreach (Category item in CatService.Categories)
+        {
+               <div class="category-item grid-item"><a href="/@item.Url">@item.Name</a></div>
+        }
+         @* <div class="category-item grid-item"><a href="/product">Shop all</a></div>
+      <div class="category-item grid-item"><a href="/">childrens bibles</a></div>
+      <div class="category-item grid-item"><a href="/">christian prayer</a></div>
+      <div class="category-item grid-item"><a href="/">last chnace bargains</a></div>
+      <div class="category-item grid-item"><a href="/">church supplies</a></div>
+      <div class="category-item grid-item"><a href="/">Link</a></div>
+      <div class="category-item grid-item"><a href="/">Link</a></div>
+      <div class="category-item grid-item"><a href="/">Link</a></div> *@
+    
+      }
+     </div>
+  </div>
+</section>
+
+
+@code{
+  [Parameter]
+  public string CategoryUrl { get; set; }
+  private Category category = null;
+
+ protected override void OnParametersSet()
+  {
+    if(CategoryUrl != null)
+    {
+      category = CatService.Categories.FirstOrDefault(c => c.Url.ToLower().Equals(CategoryUrl.ToLower()));
+    }
+    else
+    {
+      category = null;
+    }
+  }
+}

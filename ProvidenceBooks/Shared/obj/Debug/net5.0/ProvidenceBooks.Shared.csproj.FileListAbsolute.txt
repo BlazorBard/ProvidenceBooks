@@ -1,0 +1,12 @@
+C:\Users\Landry Barb II\Documents\WebDevelopment\Blazor\FullStack\ProvidenceBooks\ProvidenceBooks\Shared\bin\Debug\net5.0\ProvidenceBooks.Shared.deps.json
+C:\Users\Landry Barb II\Documents\WebDevelopment\Blazor\FullStack\ProvidenceBooks\ProvidenceBooks\Shared\bin\Debug\net5.0\ProvidenceBooks.Shared.dll
+C:\Users\Landry Barb II\Documents\WebDevelopment\Blazor\FullStack\ProvidenceBooks\ProvidenceBooks\Shared\bin\Debug\net5.0\ref\ProvidenceBooks.Shared.dll
+C:\Users\Landry Barb II\Documents\WebDevelopment\Blazor\FullStack\ProvidenceBooks\ProvidenceBooks\Shared\bin\Debug\net5.0\ProvidenceBooks.Shared.pdb
+C:\Users\Landry Barb II\Documents\WebDevelopment\Blazor\FullStack\ProvidenceBooks\ProvidenceBooks\Shared\obj\Debug\net5.0\ProvidenceBooks.Shared.csproj.AssemblyReference.cache
+C:\Users\Landry Barb II\Documents\WebDevelopment\Blazor\FullStack\ProvidenceBooks\ProvidenceBooks\Shared\obj\Debug\net5.0\ProvidenceBooks.Shared.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Landry Barb II\Documents\WebDevelopment\Blazor\FullStack\ProvidenceBooks\ProvidenceBooks\Shared\obj\Debug\net5.0\ProvidenceBooks.Shared.AssemblyInfoInputs.cache
+C:\Users\Landry Barb II\Documents\WebDevelopment\Blazor\FullStack\ProvidenceBooks\ProvidenceBooks\Shared\obj\Debug\net5.0\ProvidenceBooks.Shared.AssemblyInfo.cs
+C:\Users\Landry Barb II\Documents\WebDevelopment\Blazor\FullStack\ProvidenceBooks\ProvidenceBooks\Shared\obj\Debug\net5.0\ProvidenceBooks.Shared.csproj.CoreCompileInputs.cache
+C:\Users\Landry Barb II\Documents\WebDevelopment\Blazor\FullStack\ProvidenceBooks\ProvidenceBooks\Shared\obj\Debug\net5.0\ProvidenceBooks.Shared.dll
+C:\Users\Landry Barb II\Documents\WebDevelopment\Blazor\FullStack\ProvidenceBooks\ProvidenceBooks\Shared\obj\Debug\net5.0\ref\ProvidenceBooks.Shared.dll
+C:\Users\Landry Barb II\Documents\WebDevelopment\Blazor\FullStack\ProvidenceBooks\ProvidenceBooks\Shared\obj\Debug\net5.0\ProvidenceBooks.Shared.pdb

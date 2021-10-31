@@ -1,0 +1,212 @@
+@use '../config/variables'as v;
+@use '../base/typography'as t;
+@use "../config/mixins";
+
+
+
+#header {
+    display: grid;
+    background-color: v.$clr-white;
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: center;
+    align-items: center;
+    // height: 10vh;
+    max-width: 1600px;
+    width: 100%;
+    position: relative;
+    z-index: 1;
+
+    .logo {
+        img{
+            width: 6rem;
+        }
+    }
+
+
+
+
+
+    .cart {
+        img {
+            width: 2rem;
+        }
+    }
+
+}
+
+/******NAV MENU*******/
+
+
+.close{
+    
+  position: absolute;
+    display: grid;
+    grid-template-columns: 1fr;
+    height: 100%;
+@include mixins.transition-ease;
+align-content: space-around;
+    transform:translateX(-100%); 
+
+    .nav-link{
+        font-size: t.$fs-lg;
+
+    }
+  
+   
+}
+.open{
+    position: absolute;
+    display: grid;
+    grid-template-columns: 1fr;
+    align-content: space-around;
+    
+    height: 100%;
+  width: 100%;
+    transform:translateX(0%); 
+    background-color: green;
+@include mixins.transition-ease;
+    .nav-link{
+        font-size: t.$fs-lg;
+
+    }
+  
+}
+
+.navBar{
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+      
+    .nav-menu{
+
+        
+        position: relative;
+        list-style: none;
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        align-items: center;
+        justify-items: center;
+        background-color: v.$clr-white;
+        height: 8rem;
+        padding: 0;
+        margin: 0;
+        
+
+      
+      
+        
+        // border-radius: 20px;
+
+        li{
+            img{
+                width: 3rem;
+                margin: 0 auto;
+               
+                @include mixins.transition-ease;
+            }
+
+            a{
+                color: v.$clr-black;
+           
+          
+            font-size: t.$fs-md;
+            }
+
+           
+        }
+        .browse {
+            position: relative;
+            text-align: center;
+
+            color: v.$clr-black;
+            display: block;
+            
+            font-size: t.$fs-md;
+            z-index: 1;
+            position: relative;
+           
+            @include mixins.transition-ease;
+            img{
+                margin: auto;
+            }
+            &:hover{
+                color: green;
+                transform: translateY(-20%);
+              
+
+            }
+            .menu-btn{
+                cursor: pointer;
+            }
+
+           
+        }
+
+       
+    }
+
+}
+
+/******END NAV MENU*******/
+
+#main{
+    height: calc(100vh - 60px);
+}
+
+/******FOOTER*******/
+
+#footer {
+    position: fixed;
+        bottom: 0;
+        width: 100%;
+
+    .bottom-ux-container{
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: 16vh;
+        background-color: v.$clr-white;
+        align-items: center;
+        .box{
+           display: grid;
+           grid-template-columns: 1fr;
+           grid-template-rows: repeat(2, 1fr);
+           align-items: center;
+           width: 100%;
+           justify-items: center;
+
+            img{
+                width: 4rem;
+                
+            }
+            h4{
+                font-size: t.$fs-lg;
+                text-transform: capitalize;
+            }
+        }
+    }
+
+    .search {
+      
+
+        img {
+            
+        }
+
+       
+    }
+
+  
+
+    .login {
+      
+
+        img {
+            
+        }
+    }
+}
+
+
+/****** END FOOTER*******/
+
+

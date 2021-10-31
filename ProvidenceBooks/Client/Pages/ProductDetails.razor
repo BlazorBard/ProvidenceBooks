@@ -1,0 +1,78 @@
+@page "/product/{id}"
+@inject IProductService PS
+@inject ICartService CS
+
+
+<h2>product deatil for product with iD @Id</h2>
+
+<section class="product-list">
+    <div class="container">
+        <h2>Book List</h2>
+
+
+
+
+
+        <li class="product-list-preview-item">
+            <div class="product-image">
+                <img src="@product.Image" />
+            </div>
+            <div class="product-info">
+                <h2 class="product-title">
+                    @product.ProductName
+                </h2>
+                <p class="product-description">
+                    @product.Description
+                </p>
+
+            </div>
+
+            <div>
+                <div class="product-price">
+                      @if (product.OriginalPrice > product.Price)
+                    {
+                         <h3 class="price">
+                            $@product.Price
+                        </h3>
+                        <h4 class="original-price">
+                             $@product.OriginalPrice
+                        </h4>
+                       
+                    }
+                    else{
+                          <h3 class="price">
+                        $@product.Price
+                    </h3>
+                    }
+                  
+
+                </div>
+                <button class="btn btn-primary" @onclick="@(() =>
+                      CS.AddProduct(product))">
+                    Add to Cart
+                </button>
+               
+            </div>
+        </li>
+
+
+    </div>
+</section>
+
+
+@code {
+    private Product product = null;
+
+    [Parameter]
+    public string Id { get; set; }
+
+    protected override void OnInitialized()
+    {
+        if (PS.Products == null || PS.Products.Count == 0)
+        {
+            PS.LoadProducts();
+        }
+
+        product = PS.Products.FirstOrDefault(p => p.ProductId == Int32.Parse(Id));
+    }
+}

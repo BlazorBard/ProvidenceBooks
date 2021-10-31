@@ -1,0 +1,77 @@
+@use './functions';
+
+@mixin dynamicColor($color) {
+    background: $color;
+    color: functions.set-text-color($color);
+    
+}
+
+@mixin transition-ease {
+    transition: all 0.5s ease;
+}
+
+/***Mobile First*****/
+@mixin media-md{
+    @media screen and (min-width: 768px){
+        @content;
+    }
+}
+
+@mixin media-lg {
+    @media screen and (min-width: 1024px) {
+        @content;
+    }
+}
+
+@mixin media-xl {
+    @media screen and (min-width: 1600px) {
+        @content;
+    }
+}
+
+@mixin media-landscape{
+    
+@media only screen 
+  and (min-device-width: 375px) 
+  and (max-device-width: 812px) 
+  and (-webkit-min-device-pixel-ratio: 3)
+  and (orientation: landscape) { 
+      @content;
+
+}
+
+}
+
+@mixin media-portrait {
+    
+
+@media only screen 
+  and (min-device-width: 375px) 
+  and (max-device-width: 812px) 
+  and (-webkit-min-device-pixel-ratio: 3)
+  and (orientation: portrait) { 
+      @content;
+      
+  }
+}
+/***Mobile First end*****/
+
+
+/******Desktop First*****/
+@mixin media-md-max{
+    @media screen and (max-width: 768px){
+        @content;
+    }
+}
+
+@mixin media-sm-max{
+    @media screen and (max-width: 574px){
+        @content;
+    }
+}
+
+@mixin media-lg-max {
+    @media screen and (max-width:991px) {
+        @content
+    }
+}

@@ -1,0 +1,35 @@
+@use "../config/mixins";
+@use "../base/typography";
+@use "../config/variables";
+
+/*****Media Queroes*******/
+@include mixins.media-md{
+
+   
+
+}
+
+
+@include mixins.media-lg-max{
+ 
+}
+
+@include mixins.media-md-max{
+
+  
+
+ 
+            
+    
+
+   
+        
+    
+   
+}
+
+@include mixins.media-sm-max{
+
+}
+
+/****End Home Page Media*****/

@@ -1,0 +1,149 @@
+﻿@inherits LayoutComponentBase
+@using ProvidenceBooks.Client.Services.CartService
+@inject ICartService CS
+@inject ICategoryService CatService
+@implements IDisposable
+@inject IJSRuntime js
+
+
+<header id="header">
+    <div class="logo">
+        <img src="../images/logos/providence-logo.png" alt="">
+    </div>
+
+
+    <div class="cart">
+        <img src="../images/logos/cart-logo.png" alt="">
+        <h4>
+            $@CS.Total
+        </h4>
+    </div>
+
+
+
+
+</header>
+
+
+<div class="@NavMenuClass" @onclick="ToggleNavMenu">
+    <NavLink href="/" class="nav-link">
+        Christmas shop
+    </NavLink>
+    <NavLink href="/product" class="nav-link">
+        books
+    </NavLink>
+    <li class="dropdown-divider">
+        @foreach (var category in CatService.Categories)
+        {
+            <NavLink href="@category.Url" class="nav-link">
+                <span class="oi oi-@category.Icon"></span>@category.Name
+
+            </NavLink>
+        }
+    </li>
+
+    <NavLink href="/" class="nav-link">
+        homeschool shop
+    </NavLink>
+    <NavLink href="/" class="nav-link">
+        all shops
+    </NavLink>
+    <NavLink href="/" class="nav-link">
+        bibles
+    </NavLink>
+    <NavLink href="/" class="nav-link">
+        bible accessories
+    </NavLink>
+</div>
+
+
+<main id="main">
+    @Body
+</main>
+
+
+<nav class="navBar">
+    <ul class="nav-menu">
+
+        <li>
+            <NavLink href="/">
+                <img src="./images/logos/signin-logo.png" alt="">
+                <h4>Sign In</h4>
+
+            </NavLink>
+        </li>
+        <li class="browse">
+            <div class="menu-btn" @onclick="ToggleNavMenu">
+                <img src="./images/logos/bible-logo.png" alt="">
+                <h4>Browse</h4>
+            </div>
+
+        </li>
+        <li>
+            <a href="/">
+                <img src="./images/logos/magnifier-logo.png" alt="">
+                <h4>search</h4>
+            </a>
+        </li>
+
+
+    </ul>
+</nav>
+<footer id="footer">
+    @* <div class="bottom-ux-container">
+        <div class=" box login ">
+
+        <img src="./images/logos/signin-logo.png" alt="">
+        <h4>Sign In</h4>
+        </div>
+        <div class="box browse">
+
+        <img src="./images/logos/bible-logo.png" alt="">
+        <label for="menu-btn" class="browse-icon">
+        <h4>Browse</h4>
+        </label>
+
+        </div>
+        <div class="box search">
+        <img src="./images/logos/magnifier-logo.png" alt="">
+        <h4>search</h4>
+        </div>
+        </div> *@
+
+
+    @*
+        <div>Icons made by <a href="https://www.freepik.com" title="Freepik">Freepik</a> from <a
+        href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></div> *@
+</footer>
+
+
+
+@code {
+    protected override void OnInitialized()
+    {
+        CS.OnChange += StateHasChanged;
+        CatService.LoadCategories();
+    }
+    public void Dispose()
+    {
+        CS.OnChange -= StateHasChanged;
+    }
+
+
+
+
+    /*****Nav Menu BindEvent****/
+    private bool collapaseNavMenu = false;
+
+    private string NavMenuClass => collapaseNavMenu ? "open" : "close";
+
+    private void ToggleNavMenu()
+    {
+        collapaseNavMenu = !collapaseNavMenu;
+    }
+
+
+    /*******Nav Menu BindEvent******/
+
+
+}

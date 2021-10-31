@@ -1,0 +1,33 @@
+@use './base/reset';
+@use './base/typography';
+@use './base/utilities';
+
+@use 'config/variables';
+
+@use 'layout/navigation';
+
+@use './Pages/home';
+@use './Pages/product-list';
+
+
+
+@use 'layout/media-queries';
+
+
+p{
+    font-family: typography.$ff-primary;
+}
+h1,h2,h3,h4,h5,h6{
+    font-family: typography.$ff-heading;
+
+}
+a{
+    text-decoration: none;
+    font-family: typography.$ff-secondary;
+
+}
+ul{
+    list-style: none;
+    margin: none;
+    padding: none;
+}

@@ -1,0 +1,67 @@
+@use '../config/variables'as v;
+@use '../base/typography'as t;
+@use "../config/mixins";
+
+.container{
+    width: min(80ch, 100% - 2rem);
+    margin-right: auto;
+    margin-left: auto;
+    // background-color: green;
+    
+}
+
+.product-title{
+    color: v.$clr-black;
+}
+.product-description{
+    width: min(50ch, 100% - 2rem);
+    margin-left: auto;
+    margin-right: auto;
+    font-size: t.$fs-sm;
+    text-align: center;
+}
+
+.btn{
+    background-color: v.$clr-primary-2;
+    padding: .5rem;
+    border: solid black 1px;
+    border-radius: .5rem;
+    box-shadow: 1px 2px 1px black;
+    color: v.$clr-white;
+}
+
+.product-price{
+    .price{
+        color: green;
+    }
+
+    .original-price{
+        color: grey;
+        text-decoration: line-through;
+    }
+}
+
+.cart-section{
+    display: grid;
+    height: 30vh;
+
+    .cart-list{
+        padding: 0;
+    }
+    .cart-content{
+        padding: 0;
+        display: grid;
+        grid-template-columns: 1fr 2fr 1fr;
+        justify-items: center;
+        align-items: center;
+        height: min-content;
+        img{
+            width: 25%;
+            margin: auto;
+        }
+
+        .cart-info{
+           
+        }
+    }
+}

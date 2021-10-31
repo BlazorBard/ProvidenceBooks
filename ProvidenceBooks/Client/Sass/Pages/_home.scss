@@ -1,0 +1,40 @@
+@use '../config/variables'as v;
+@use '../base/typography'as t;
+@use "../config/mixins";
+
+h2{
+    color: v.$test-clr-1;
+}
+
+.hero{
+    background: url('../images/backgrounds/bg1.jpg')center/cover;
+    height: 20vh;
+}
+
+.categories{
+    // background-color: red;
+    height: 100vh;
+
+    .category-grid-container{
+
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(4, 1fr);
+        grid-gap: 1rem;
+        height: 50vh;
+        margin-top: 2rem;
+       
+
+        .category-item{
+            background-color: v.$clr-white;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: t.$fs-lg;
+            box-shadow: 2px 3px 5px v.$clr-black;
+                     
+        }
+    }
+
+}
